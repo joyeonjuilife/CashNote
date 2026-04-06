@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CashNote</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2 class="logo">CashNote</h2>
+      <nav>
+        <a href="index.html" class="active">대시보드</a>
+        <a href="record.html">거래 내역</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h1>대시보드</h1>
+      <div class="dashboard">
+        <!-- 왼쪽: 수입/지출 입력 -->
+        <div class="card input-card">
+          <h2>빠른 입력</h2>
+          <div class="toggle-btns">
+            <button id="tabIncome" class="active">+ 수입</button>
+            <button id="tabExpense">- 지출</button>
+          </div>
+
+          <div id="incomeForm" class="form">
+            <input type="number" id="incomeAmount" placeholder="금액 입력">
+            <select id="incomeCategory">
+              <option value="">선택</option>
+            </select>
+            <input type="text" id="incomeMemo" placeholder="메모 (선택)">
+            <input type="date" id="incomeDate">
+            <button onclick="addIncome()">저장하기</button>
+          </div>
+
+          <div id="expenseForm" class="form hidden">
+            <input type="number" id="expenseAmount" placeholder="금액 입력">
+            <select id="expenseCategory"></select>
+            <input type="text" id="expenseMemo" placeholder="메모 (선택)">
+            <input type="date" id="expenseDate">
+            <button onclick="addExpense()">저장하기</button>
+          </div>
+        </div>
+
+        <!-- 가운데: 현재 잔액 & 이번달 지출 -->
+        <div class="card summary-card">
+          <h2>현재 잔액</h2>
+          <p id="balance">0원</p>
+          <h3>이번달 지출</h3>
+          <p id="monthExpense">0원</p>
+        </div>
+
+        <!-- 오른쪽: 차트 -->
+        <div class="card chart-card">
+          <h2>총소비 vs 총수입</h2>
+          <canvas id="financeChart"></canvas>
+        </div>
+
+        <!-- 오늘의 거래 내역 카드 -->
+        <div class="card today-card">
+          <h2>오늘의 거래 내역</h2>
+          <div id="todayRecords" class="records-container"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

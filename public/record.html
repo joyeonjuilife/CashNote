@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>거래 내역</title>
+
+  <!-- 전체 공용 스타일 연결 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="record-page">
+  <div class="app">
+
+    <!-- 왼쪽 사이드바 -->
+    <aside class="sidebar">
+      <!-- 로고/앱 이름 -->
+      <h2 class="logo">CashNote</h2>
+
+      <!-- 네비게이션 메뉴 -->
+      <nav>
+        <!-- 입출금 관리 페이지로 이동 -->
+        <a href="index.html">입출금 관리</a>
+
+        <!-- 현재 페이지: 거래 내역(선택됨 표시 위해 class="active") -->
+        <a href="record.html" class="active">거래 내역</a>
+      </nav>
+    </aside>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="content">
+      <h1>거래 내역</h1>
+
+      <!-- 검색 입력 필드 -->
+      <!-- 카테고리 / 메모 / 날짜 전체를 한 번에 검색 -->
+      <input type="text" id="searchInput" placeholder="검색: 카테고리, 메모, 날짜">
+
+      <!-- 거래 데이터가 들어갈 컨테이너 -->
+      <div id="recordsList" class="records-container"></div>
+    </main>
+
+  </div>
+
+  <!-- 거래 목록 기능(JS) 로드 -->
+  <script src="record.js"></script>
+</body>
+</html>

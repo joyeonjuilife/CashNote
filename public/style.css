@@ -1,0 +1,233 @@
+/* 기본 */
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  background: #f8f9fc;
+  color: #333;
+}
+
+/* 앱 레이아웃 */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* 사이드바 */
+.sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 0 0 20px;
+  font-size: 20px;
+  color: #444;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 10px;
+  color: #555;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: #635bff;
+  color: #fff;
+}
+
+/* 메인 */
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.content h1 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* 카드 */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 요약 카드 */
+.summary-card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* 차트 카드 */
+.chart-card canvas {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+/* 입력 카드 */
+.toggle-btns {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.toggle-btns button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #eee;
+  font-weight: bold;
+}
+
+.toggle-btns button.active {
+  background: #00c471;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.form input, .form select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form button {
+  background: #635bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #5145cd;
+}
+
+/* 숨기기 */
+.hidden {
+  display: none;
+}
+
+/* 거래 내역 리스트 */
+.records-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 100%;
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+/* 거래 카드 */
+.record-card {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  flex: 1 1 calc(33.333% - 15px);
+  min-width: 250px;
+  box-sizing: border-box;
+}
+
+.record-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.record-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: #888;
+  font-size: 13px;
+}
+
+.record-amount.income {
+  color: #00c471;
+}
+
+.record-amount.expense {
+  color: #e74c3c;
+}
+
+.record-card.income {
+  border-left: 5px solid #00c471;
+}
+
+.record-card.expense {
+  border-left: 5px solid #e74c3c;
+}
+
+/* 오늘의 거래 내역 카드 */
+.today-card {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+  margin-top: 20px;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.today-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* 오늘의 거래 리스트 */
+#todayRecords {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* record.html 전용 - 세로 정렬 */
+body.record-page .records-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: stretch;
+}
+
+body.record-page .record-card {
+  width: 100%;
+  flex: none;
+  min-width: unset;
+}
